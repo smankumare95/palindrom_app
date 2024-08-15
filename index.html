@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <title>Palindrom Checker App</title>
+    <style>
+      * {
+        font-family: "Cambria";
+        font-size: 40px;
+      }
+    </style>
+  </head>
+
+  <body style="background-color: linen">
+    <center>
+      <h1>Palindrom Checker App</h1>
+
+      <form onsubmit="check()">
+        <input type="text" placeholder="Enter a String" id="str" />
+        <br /><br />
+        <input type="submit" value="Check" />
+      </form>
+
+      <h2 id="msg"></h2>
+
+      <script>
+        function check() {
+          event.preventDefault();
+          let str = document.getElementById("str");
+          let msg = document.getElementById("msg");
+
+          if (str.value === "") {
+            alert("Please enter a string");
+            msg.innerHTML = "";
+            name.focus();
+            return;
+          }
+
+          let reversed = str.value.split("").reverse().join("");
+
+          if (str.value === reversed) {
+            msg.innerHTML = `${str.value} is a palindrome`;
+          } else {
+            msg.innerHTML = `${str.value} is not a palindrome`;
+          }
+        }
+      </script>
+    </center>
+  </body>
+</html>
